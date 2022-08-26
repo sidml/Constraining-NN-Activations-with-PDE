@@ -1,4 +1,7 @@
-Blog Post [link](https://sidml.github.io/Enforcing-PDE-constaints-on-Neural-Network-activations/)
+### Paper [link](https://openaccess.thecvf.com/content/CVPR2022/papers/Kag_Condensing_CNNs_With_Partial_Differential_Equations_CVPR_2022_paper.pdf)
+### My Blog Post [link](https://sidml.github.io/Enforcing-PDE-constaints-on-Neural-Network-activations/)
+
+----
 ## Commands for replicating experiment results
 All the experiments were done using Kaggle notebooks with GPU enabled.. This environment had Tensorflow 2.6 and other required libraries pre-installed .
 ### MNIST experiments
@@ -26,9 +29,9 @@ For PDENet training with constant Dxy (Dx=1, Dy=1):
 
 ## MNIST Confusion matrix comparison
 <figure>
-    <img src="./expt_logs/mnist/logs/cnn/images/epoch_199_cnf_matrix.jpg" style="width:33%">
-    <img src="./expt_logs/mnist/logs/residual/images/epoch_199_cnf_matrix.jpg" style="width:33%">
-    <img src="./expt_logs/mnist/logs/pde/images/epoch_199_cnf_matrix.jpg" style="width:33%">
+    <img src="./expt_logs/mnist/logs/cnn/images/epoch_199_cnf_matrix.jpg" >
+    <img src="./expt_logs/mnist/logs/residual/images/epoch_199_cnf_matrix.jpg" >
+    <img src="./expt_logs/mnist/logs/pde/images/epoch_199_cnf_matrix.jpg" >
     <figcaption>Confusion matrices for CNN, Residual and PDE Models. It can be noted that the PDE model has lowest confusion b/w 3 & 5 among the three
 models. [Open in new tab to see the enlarged image.]</figcaption>
 </figure>
@@ -43,8 +46,8 @@ models. [Open in new tab to see the enlarged image.]</figcaption>
 - loader.py: Functions for MNIST & CIFAR data loading and augmentation are defined here.
 - viz_pde.py: This script can be used to visualize Dx, Dy and advection terms using trained model checkpoint weights.
 
-## Directory Structure of logs and checkpoint folder
-The `expt_logs` folder contains detailed logs and checkpoints for various experiments.\
+## Directory Structure of logsfolder
+The `expt_logs` folder contains detailed logs for various experiments.\
 The directory structure is as follows:
 ```
 --- expt_logs
@@ -55,5 +58,4 @@ The directory structure is as follows:
                 --- train (contains tensorboard logs)                            
 ```
 The logs folder also contains `settings_log.txt` file. This file contains the training/testing loss and accuracy.\
-`checkpoints` folder contains the best checkpoints obtained during model training.\
 
