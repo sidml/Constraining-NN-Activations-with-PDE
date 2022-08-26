@@ -1,3 +1,4 @@
+Blog Post [link](https://sidml.github.io/Enforcing-PDE-constaints-on-Neural-Network-activations/)
 ## Commands for replicating experiment results
 All the experiments were done using Kaggle notebooks with GPU enabled.. This environment had Tensorflow 2.6 and other required libraries pre-installed .
 ### MNIST experiments
@@ -23,6 +24,14 @@ For PDENet training with advection disabled:
 For PDENet training with constant Dxy (Dx=1, Dy=1):
 `python train_cifar.py --epochs 5 --net='pdenet' --constant_Dxy True`
 
+## MNIST Confusion matrix comparison
+<figure>
+    <img src="./expt_logs/mnist/logs/cnn/images/epoch_199_cnf_matrix.jpg" style="width:33%">
+    <img src="./expt_logs/mnist/logs/residual/images/epoch_199_cnf_matrix.jpg" style="width:33%">
+    <img src="./expt_logs/mnist/logs/pde/images/epoch_199_cnf_matrix.jpg" style="width:33%">
+    <figcaption>Confusion matrices for CNN, Residual and PDE Models. It can be noted that the PDE model has lowest confusion b/w 3 & 5 among the three
+models. [Open in new tab to see the enlarged image.]</figcaption>
+</figure>
 
 ## About the code
 - train_cifar.py: This file can be used for training different networks on CIFAR-10 dataset. The training & evaluation loop and default training settings are defined in this file. 
@@ -30,7 +39,7 @@ For PDENet training with constant Dxy (Dx=1, Dy=1):
 - mnist_model.py: Toy models used for MNIST experiment are defined here.
 - utils.py: Plotting, logging, metric calculators and other miscellaneous functions are defined in this file.
 - resnet.py: Resnet32 model is defined here. Depending on user settings, different types of diffusion and anisotropic blocks are invoked here.
-- global_layer.py: Contains implementation of Diffusion-Advection layer as proposed in the paper and nonlinear diffusion based on Perona Malik diffusivity. It also contains implementation of learnable Anisotropic block.
+- global_layer.py: Contains implementation of Diffusion-Advection layer as proposed in the paper.
 - loader.py: Functions for MNIST & CIFAR data loading and augmentation are defined here.
 - viz_pde.py: This script can be used to visualize Dx, Dy and advection terms using trained model checkpoint weights.
 
