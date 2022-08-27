@@ -10,7 +10,7 @@ import tensorflow as tf
 
 from sklearn.metrics import confusion_matrix
 from resnet import resnet32, pdenet
-from custom_conv_resnet import resnet32_custom_conv
+# from custom_conv_resnet import resnet32_custom_conv
 from loader import load_dataset, map_ds_cifar
 from utils import get_weight_count, get_callbacks, MetricTracker, setup_logger, plot_cm
 
@@ -171,7 +171,6 @@ if __name__ == "__main__":
         help="test batch size",
     )
 
-    # parser.add_argument('--epochs', type=int, default=200, metavar='N',
     parser.add_argument(
         "--epochs",
         type=int,
